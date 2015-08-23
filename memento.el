@@ -40,6 +40,7 @@
 ;; ------------------------------------------------
 ;; Functions for the Memento package (22 aug 2015).
 ;; ------------------------------------------------
+;;;###autoload
 (defun memento ()
   (interactive)
   (if (file-exists-p memento-file)
