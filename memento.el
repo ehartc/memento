@@ -99,4 +99,4 @@
 
 (provide 'memento)
 
-;; memento.el ends here. 
+;;; memento.el ends here.
