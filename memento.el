@@ -40,11 +40,12 @@
 ;; ------------------------------------------------
 ;; Functions for the Memento package (22 aug 2015).
 ;; ------------------------------------------------
+;;;###autoload
 (defun memento ()
   (interactive)
   (if (file-exists-p memento-file)
       ;; Check if there was a log written today. If this is not the case, then check if it's already tonight except the night.
-      (if (and (string< (memento-get-modification-date) (format-time-string "%Y-%m-%d")) (string> (format-time-string "%k") "19"))
+      (if (and (string< (memento-get-modification-date) (format-time-string "%Y-%m-%d")) (string< "19" (format-time-string "%k")))
           ;; Invoke Memento if the user wants to proceed. 
           (if (yes-or-no-p "Do you want to tell how your day was?")
               (progn (call-interactively 'memento-write-log))))
@@ -99,4 +100,4 @@
 
 (provide 'memento)
 
-;; memento.el ends here. 
+;;; memento.el ends here.
